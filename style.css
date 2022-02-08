@@ -1,5 +1,17 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'poppins', sans-serif;
+    font-size: 14px;
+    background: whitesmoke;
+    overflow: hidden;
+}
 .section{
     display:  flex;
+    background: #c8a8c8;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -20,4 +32,39 @@ section h1{
     height: 600px;
     display: grid;
     z-index: 100;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    background: rgb(240,255,240);
+    border-radius: 10px;
 }
+.buttons {
+    width: 600px;
+    position: absolute;
+    margin: 10em;
+    padding: 3em 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.btn{
+    padding: 1em 3em;
+    order: 1;
+    margin: 2em;
+    background: rgb(240,255,240);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    font-weight: bold;
+    z-index: 100;
+    letter-spacing: 1px;
+}
+
+.btn:hover{
+    background: #887188;
+    color: rgb(240,255,240);
+} 
+
+
+

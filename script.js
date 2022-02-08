@@ -5,11 +5,18 @@ const btnSize= document.createElement('button');
 const btnBlack = document.createElement('button');
 const buttonsContainer = document.querySelector('.btns');
 
+window.onload = () => {
+    const boxes = document.querySelectorAll('.box');
+    boxes.forEach(box => box.addEventListener('mouseover', () => {
+        box.style.backgroundColor = 'black';
+        }));
+    }
+
 
 function createGrid(col, rows) {
     for(let i = 0; i < (col * rows); i++) {
         const div = document.createElement('div');
-        div.style.border = '1px solid red'
+        div.style.border = 'none';
         container.style.gridTemplateColumns = `repeat(${col}, 1fr)`;
         container.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
         container.appendChild(div).classList.add('box');
@@ -83,4 +90,3 @@ resizeGrid();
 grayColor();
 blackColor();
 rgbColor();
-    
