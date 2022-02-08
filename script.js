@@ -39,7 +39,48 @@ function blackColor(){
     })
     buttonsContainer.appendChild(btnBlack).classList.add('btn');
 }
+function rgbColor(){
+    const boxes = container.querySelectorAll('.box');
+    btnRgb.textContent = 'RGB';
+    btnRgb.addEventListener('click', () => {
+        boxes.forEach(box => box.addEventListener('mouseover', () => {
+            let Rnum = Math.floor(Math.random() * 255);
+            let Gnum = Math.floor(Math.random() * 255);
+            let Bnum = Math.floor(Math.random() * 255);
+            box.style.backgroundColor = `rgb(${Rnum}, ${Gnum}, ${Bnum})`;
+        }))
+    })
+    buttonsContainer.appendChild(btnRgb).classList.add('btn');
+}
 
+function resetGrid() {
+    const boxes = container.querySelectorAll('.box');
+    boxes.forEach(box => box.remove());
+}
+
+function resizeGrid() {
+    btnSize.textContent = 'Resize';
+    btnSize.addEventListener('click', () => {
+        const size = prompt('Enter size of grid:');
+        if(size === null || size < 1) {
+            resetGrid();
+            createGrid(16, 16);
+            blackColor();
+            grayColor();
+            rgbColor();
+        } else {
+            resetGrid();
+            createGrid(size, size);
+            blackColor();
+            grayColor();
+            rgbColor();
+        }
+        
+    })
+    buttonsContainer.appendChild(btnSize).classList.add('btn');
+}
+resizeGrid();
 grayColor();
 blackColor();
+rgbColor();
     
